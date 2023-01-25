@@ -1,0 +1,148 @@
+.Product1{
+    margin: auto;
+    display: flex;
+    flex-direction: row;
+    background-color: #0a443a;
+    
+    
+    align-items: center;
+    
+    z-index: 1;
+    
+    /* max-height: fit-content; */
+    width: 100%;
+    /* border-bottom: 0px; */
+    
+    margin-left: auto;
+    margin-right: auto;
+
+
+
+    
+}
+.Product_main1{
+    width:75%;
+    /* margin-bottom: 3vh; */
+    border: 2px solid black;
+    /* background-color: antiquewhite; */
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-items: flex-start;
+    border: 2px solid black;
+    border-radius: 15px;
+    background-color: #7e16b9;
+    /* background-color: #f3fffd; */
+    justify-content: flex-start;
+    max-width: 1500px;
+    
+    
+}
+
+.product_info1{
+    
+    margin-top: 2vh;
+    width: 100%;
+    
+   
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: aqua;
+    
+}
+
+.cartText{
+    font-size: 2vh;
+}
+
+.hidden-input{
+    visibility: hidden;
+}
+
+.title1{
+    margin-left: 10px;
+    font-size: 3vh;
+}
+
+
+.price1{
+    margin-left: 5px;
+    font-size: 2vh;
+    align-self: baseline;
+}
+
+.rating1{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    align-self: baseline;
+}
+
+
+.image1{
+    
+    /* width: 50%; */
+    height: 100%;
+    width: 40%;
+    /* background-color: bisque; */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 55vh;
+    margin-top: 2vh;
+    margin: auto;
+ 
+   
+}
+
+.product_image1{
+    /* width: 60%; */
+    object-fit: contain;
+    height: 100%;
+    border-radius: 10px;
+    align-self: center;
+    width: 95%;
+    height: 80%;
+    /* margin-top: auto; */
+    margin: auto;
+    
+    
+   
+}
+
+.rating1{
+    font-size: 2vh;
+    margin-left: 5px;
+}
+
+
+.Cart1{
+
+    /* background-color: aqua; */
+    /* align-self: center; */
+    display: flex;
+    flex-direction: column;
+    width: 60%;
+    /* height: 100%; */
+    align-items: flex-end;
+    margin: auto;
+    /* margin-top: 1vh; */
+    /* border: 2px solid black; */
+}
+.addToCart1{
+    background: #A7171A;
+    border: 1px solid;
+   margin: auto;
+   /* margin-bottom: 5px; */
+    border-color: #a88734 #9c7e31 #846a29;
+    color: white;
+    width: 50%;
+    /* align-self: center; */
+    border-radius: 12px;
+    margin-top: 1vh;
+    font-size: 20px;
+
+
+    
+}

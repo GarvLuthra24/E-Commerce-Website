@@ -1,0 +1,133 @@
+.Product{
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    background-color: #f3fffd;
+    
+    align-items: center;
+    
+    z-index: 1;
+    
+    /* max-height: fit-content; */
+    width: 100%;
+    /* border-bottom: 0px; */
+    
+    margin-left: auto;
+    margin-right: auto;
+
+
+    
+}
+.Product_main{
+    width: 30%;
+    margin-bottom: 3vh;
+    border: 2px solid black;
+    /* background-color: antiquewhite; */
+    display: flex;
+    flex-direction: column;
+    border: 2px solid black;
+    border-radius: 15px;
+    background-color: #f3fffd;
+    
+    
+}
+
+.product_info{
+    width: 100%;
+    margin-top: 2vh;
+   
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+}
+
+.hidden-input{
+    visibility: hidden;
+}
+
+.title{
+    margin-left: 10px;
+    font-size: 3vh;
+}
+
+
+.price{
+    margin-left: 5px;
+    font-size: 2vh;
+    align-self: baseline;
+}
+
+.rating{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    align-self: baseline;
+}
+
+
+.image{
+    
+    width: 100%;
+    height: 50vh;
+    /* background-color: bisque; */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 55vh;
+    margin-top: 2vh;
+    margin: auto;
+ 
+   
+}
+
+.product_image{
+    /* width: 60%; */
+    object-fit: contain;
+    height: 100%;
+    border-radius: 10px;
+    align-self: center;
+    width: 95%;
+    height: 80%;
+    /* margin-top: auto; */
+    margin: auto;
+    
+    
+   
+}
+
+.rating{
+    font-size: 2vh;
+    margin-left: 5px;
+}
+
+
+.Cart{
+
+    /* background-color: aqua; */
+    /* align-self: center; */
+    display: flex;
+    flex-direction: column;
+    width: 60%;
+    /* height: 100%; */
+    align-items: flex-end;
+    margin: auto;
+    /* margin-top: 1vh; */
+    /* border: 2px solid black; */
+}
+.addToCart{
+    background: #f1be3b;
+    border: 1px solid;
+   margin: auto;
+   /* margin-bottom: 5px; */
+    border-color: #a88734 #9c7e31 #846a29;
+    color: rgb(0, 0, 0);
+    width: 50%;
+    /* align-self: center; */
+    border-radius: 12px;
+    margin-top: 1vh;
+    font-size: 20px;
+
+
+    
+}

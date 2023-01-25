@@ -1,0 +1,55 @@
+.Header{
+    height: 60px;
+    display: flex;
+    align-items: center;
+    background-color: #131921;
+    position: sticky;
+    top: 0;
+    z-index: 2;
+}
+
+
+.header_logo{
+    object-fit: contain;
+    width: 100px;
+    margin: 0 20px;
+    margin-top: 10px;
+
+}
+
+.header_search{
+    display: flex;
+    align-items: center;
+    width: 70%;
+    border-radius: 5px;
+    margin: 2px solid yellow;
+
+
+}
+
+.header_searchInput{
+    width: 100%;
+}
+
+.header_option{
+    width: fit-content;
+    margin: 10px;
+    color: aliceblue;
+    align-self: center;
+    text-align: center;
+
+}
+
+.headerNav{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+
+}
+
+
+.searchButton{
+    color: black
+}
+
+
