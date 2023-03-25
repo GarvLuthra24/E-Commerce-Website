@@ -28,7 +28,6 @@ module.exports.getProductList = async (req , res) => {
 
 
 module.exports.getAddToCart = async (req , res) => {
-    // console.log('message get check')
     // console.log(req.query);
 
     const newCart = await Cart.find({_id: req.query.product_id})
@@ -39,11 +38,17 @@ module.exports.getAddToCart = async (req , res) => {
         // console.log('adding product to the cart...')
         // console.log(newCartItem);
         await newCartItem.save()
+        
         // console.log('product added successfully')
+        res.send('1')
+      
     }
     else{
+
         // console.log('Item already exists in Cart!!')
+       res.send('0')
     }
+
 
 }
 
@@ -86,6 +91,7 @@ module.exports.deleteCartItems = async (req,res) => {
     await Cart.deleteOne({_id : productId })
     .then(() => {
         // console.log('Item deleted Successfully')
+        res.send('1') 
     })
     .catch((err) => console.log(err))
 
@@ -94,5 +100,12 @@ module.exports.deleteCartItems = async (req,res) => {
 
 
 
+}
+
+module.exports.getCartCount = async(req , res) => {
+
+    await Cart.countDocuments({ type: 'jungle' })
+    .then((val ) => res.send('' + val) )
+    .catch(err => console.log(err))
 }
 

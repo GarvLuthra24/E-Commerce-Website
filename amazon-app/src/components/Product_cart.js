@@ -1,19 +1,22 @@
 import React from 'react'
 import { useEffect , useState } from 'react';
 import './Product_cart2.css'
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 
 
 
 const Product = ({title , price , imageUrl , rating, id}) => {
 
-
+  const notify = () => toast("Product Removed From Cart !");
 
   return (
     
+   
 
 
-    <div className='page'>
+    <div className='page1'>
     <div className='Product_main1'>
     <div className='Product1'>
     <div className='image1'>
@@ -52,16 +55,26 @@ const Product = ({title , price , imageUrl , rating, id}) => {
           <button className='addToCart1' 
               onClick={ (ev) => {
                 // console.log(ev)
-                const target = (ev.target.parentElement)
+                const target = (ev.target.parentElement.parentElement.parentElement)
                 console.log(target)
-                const val = (target.getElementsByClassName('hidden-input'))[0].value
+                const val = (target.getElementsByClassName('Cart1'))[0].getElementsByClassName('imput-hidden1')[0].getElementsByClassName('hidden-input')[0].value
+                
                 console.log(val)
 
                 fetch(`http://127.0.0.1:4444/cart/removeitem?product_id=${val}`)
+                .then(() => {
+                  console.log(ev.target.parentElement.parentElement)
+                  const parent = ev.target.parentElement.parentElement.parentElement.parentElement
+                  parent.remove();
+                  console.log('product deleted successfully')
+                  let val =  document.getElementsByClassName('cartItemCount')[0]
+                  // console.log(val);
+                  // console.log("hi")
+                  val.innerHTML = Number(val.innerHTML) - 1;
+                  notify()
+                })
                 .catch((err) => {console.log(err)})
-                console.log(ev.target.parentElement.parentElement)
-                const parent = ev.target.parentElement.parentElement
-                parent.remove();
+               
 
                 
               }   }

@@ -1,5 +1,6 @@
 import React, {useState , useEffect} from 'react';
 import ProductCart from './Product_cart'
+import './Cart.css'
 
 
 const Cart = () => {
@@ -22,7 +23,24 @@ const Cart = () => {
     }
 
   return (
-    
+    <div className='CartPage'>
+
+      <div className='pacTitle'>
+      <div className='cartHead'>CART</div>
+      
+
+      <div class="pacman">
+        
+      <div class="pacman-top"></div>
+      <div class="pacman-bottom"></div>
+      <div class="feed"></div>
+      </div>
+      
+      </div>
+
+
+
+
 <div className='home_row'>
           {
           productArray.map(product => 
@@ -39,7 +57,9 @@ const Cart = () => {
 
           ))}
           </div>
+          </div>
   )
+  
 }
 
 export default Cart

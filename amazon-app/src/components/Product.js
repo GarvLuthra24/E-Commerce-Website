@@ -1,13 +1,18 @@
-import React from 'react'
+import {React, ReactDOM} from 'react'
 import { useEffect , useState } from 'react';
 import  './Product_cart.css'
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
+
 
 
 
 
 const Product = ({title , price , imageUrl , rating, id}) => {
-
-
+  
+  const notify = () => toast("Product Added Successfully !");
+  const exist = () => toast("Product Already Exist in Cart !");
 
   return (
     
@@ -28,6 +33,8 @@ const Product = ({title , price , imageUrl , rating, id}) => {
             {title}
           {/* The Lean Startup: How Constant Innovation Creates Radically Successful Businesses Paperback */}
           </p>
+          <br></br>
+          <br></br>
 
           <p className='price'>
               <small>₹</small>
@@ -56,6 +63,7 @@ const Product = ({title , price , imageUrl , rating, id}) => {
               <input value={id} className='hidden-input'></input> 
             </div>
             <button className='addToCart' 
+           
               onClick={ (ev) => {
                 // console.log(ev)
                 const target = ev.target.parentElement
@@ -64,7 +72,32 @@ const Product = ({title , price , imageUrl , rating, id}) => {
                 const stringVal = stringValue[0].value
                 console.log(stringVal)
                 fetch(`http://127.0.0.1:4444/addToCart?product_id=${stringVal}`)
+                .then(data => data.json())
+                .then((neofetch) => {
+                  console.log(neofetch)
+                  if(neofetch == 1){
+                  console.log('product added to cart!')
+                  // NotificationManager.success('Success','Product Added Successfully',3000)
+                  // this.createNotification('info')
+                  // console.log('hi')
+                 
+                  let val =  document.getElementsByClassName('cartItemCount')[0]
+                  // console.log(val);
+                  // console.log("hi")
+                  val.innerHTML = Number(val.innerHTML) + 1;
+                  notify();
+                  }
+                  else{
+                    exist();
+                  }
+
+                  
+                })
+              
                 .catch((err) => {console.log(err)})
+              // React.createNotification('info')
+              // notify()
+              
                 
               }   }
             >Add To Cart

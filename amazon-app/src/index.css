@@ -1,5 +1,6 @@
 *{
   margin: 0 ;
+  
 }
 
 
@@ -12,7 +13,33 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+
+/* body{
+background-color: rgb(1, 2, 2);
+position: relative;
+z-index: 0;  
+} */
+
+html, body {
+  width: 100%;
+  height:100%;
 }
+
+body {
+    background: black;
+    background-size: 400% 400%;
+    animation: gradient 15s ease infinite;
+}
+
+@keyframes gradient {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+

@@ -1,6 +1,10 @@
-/* .home{
-    width: 100%;
-} */
+.home{
+    position: relative;
+   z-index:0;
+   /* background-color: rgb(1, 2, 2); */
+}
+
+
 
 .Home_container{
     display: flex;
@@ -8,6 +12,7 @@
     justify-content: center;
     margin: auto;
     max-width: 1500px;
+    
 }
 
 .home_row{
@@ -15,6 +20,7 @@
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: space-evenly;
+    margin-bottom: 50px;
 }
 
 

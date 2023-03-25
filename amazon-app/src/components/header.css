@@ -1,12 +1,18 @@
 .Header{
-    height: 60px;
+    height: 8vh;
     display: flex;
-    align-items: center;
+    /* align-items: space-around;
+     */
+     justify-content: space-around;
     background-color: #131921;
     position: sticky;
     top: 0;
     z-index: 2;
+    align-items: center;
+    font-size: 2vh;
+
 }
+
 
 
 .header_logo{
@@ -14,15 +20,23 @@
     width: 100px;
     margin: 0 20px;
     margin-top: 10px;
+    max-height: 100px;
+    height: 4vh;
 
 }
 
 .header_search{
+    position: relative;
     display: flex;
     align-items: center;
-    width: 70%;
+    /* height: 50%; */
+    max-height: 50px;
+    width: 100vw;
     border-radius: 5px;
     margin: 2px solid yellow;
+    
+     max-width: 1200px;
+    
 
 
 }
@@ -34,6 +48,7 @@
 .header_option{
     width: fit-content;
     margin: 10px;
+    text-decoration: none !important;
     color: aliceblue;
     align-self: center;
     text-align: center;
@@ -47,9 +62,22 @@
 
 }
 
+.hyperLink{
+    color: white;
+    
+}
+
+.cartItemCount{
+    font-size: 150%
+}
+
 
 .searchButton{
     color: black
+}
+
+a{
+    text-decoration: none !important;
 }
 
 

@@ -2,11 +2,13 @@
     margin: auto;
     display: flex;
     flex-direction: column;
-    background-color: #f3fffd;
+    background-color: #000000;
+    color: #fff;
     
     align-items: center;
     
     z-index: 1;
+    border-radius: 15px;
     
     /* max-height: fit-content; */
     width: 100%;
@@ -14,6 +16,7 @@
     
     margin-left: auto;
     margin-right: auto;
+    transition: all ease 0.5s;
 
 
     
@@ -27,9 +30,41 @@
     flex-direction: column;
     border: 2px solid black;
     border-radius: 15px;
-    background-color: #f3fffd;
+    background-color: #000000;
+    box-shadow: 0px 5px 20px #00c2cb, 0px 5px 20px #fff;
+    transition: all ease 0.5s;
+    /* max-width: 200px; */
+    min-width: min-content;
     
     
+}
+
+.Product_main:hover{
+    transform: translateY(-10px);
+  box-shadow: 0px 15px 30px #FF0000;
+  background-color: #fff;
+  color: #000000;
+  
+  
+}
+
+
+.Product_main:hover .Product{
+    background-color: white;
+    color: #000000;
+  }
+  .Product_main:hover .addToCart{
+    background-color: rgb(25, 196, 102);
+    color: #000000;
+
+  }
+
+
+
+.Product:hover{
+    background-color: #fff;
+    color: #000000;
+
 }
 
 .product_info{
@@ -47,14 +82,16 @@
 }
 
 .title{
+
     margin-left: 10px;
-    font-size: 3vh;
+    font-size:1vw;
+    height: 20vh;
 }
 
 
 .price{
     margin-left: 5px;
-    font-size: 2vh;
+    font-size: 100%;
     align-self: baseline;
 }
 
@@ -68,13 +105,13 @@
 
 .image{
     
-    width: 100%;
+    /* width: 100%; */
     height: 50vh;
     /* background-color: bisque; */
     display: flex;
     flex-direction: column;
     align-items: center;
-    height: 55vh;
+    /* height: 55vh; */
     margin-top: 2vh;
     margin: auto;
  
@@ -97,7 +134,7 @@
 }
 
 .rating{
-    font-size: 2vh;
+    font-size: 100%;
     margin-left: 5px;
 }
 
@@ -112,6 +149,7 @@
     /* height: 100%; */
     align-items: flex-end;
     margin: auto;
+    margin-bottom: 2vh;
     /* margin-top: 1vh; */
     /* border: 2px solid black; */
 }
@@ -121,13 +159,34 @@
    margin: auto;
    /* margin-bottom: 5px; */
     border-color: #a88734 #9c7e31 #846a29;
-    color: rgb(0, 0, 0);
-    width: 50%;
+    /* color: rgb(0, 0, 0); */
+    width: 75%;
     /* align-self: center; */
     border-radius: 12px;
     margin-top: 1vh;
     font-size: 20px;
+    cursor: pointer; 
+    transition: all ease 0.5s;
+    --c: #1095c1; /* the color  */
+    --h: 1.2em;   /* the height */
+    
+    line-height: var(--h);
+    background: 
+      linear-gradient(var(--c) 0 0) no-repeat 
+      calc(200% - var(--_p,0%)) 100%/200% var(--_p,.08em);
+    color: #0000;
+    overflow: hidden;
+    text-shadow: 
+      0 calc(-1*var(--_t,0em)) var(--c), 
+      0 calc(var(--h) - var(--_t,0em)) #fff;
+    transition: .3s var(--_s,0s), background-position .3s calc(.3s - var(--_s,0s));
 
 
     
 }
+
+/* .addToCart:hover{
+    --_t: var(--h);
+    --_p: 100%;
+    --_s: .3s
+} */

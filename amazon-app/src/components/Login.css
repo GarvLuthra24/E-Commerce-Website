@@ -1,0 +1,61 @@
+.login_container h1,h2{
+
+    color: rgb(255, 255, 255);
+    padding-left: 1vw;
+    padding-right: 1vw;
+    padding-bottom: 1vh;
+    
+}
+.login_container{
+    
+    /* background-color: aqua; */
+    min-width: fit-content;
+    margin: auto;
+    /* position: relative; */
+    
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    align-items: center;
+    margin: auto;
+    width: 50vw;
+    padding-bottom: 5%;
+    padding-top: 3%;
+    border: 2px solid rgb(255, 255, 255);
+    border-radius: 20px;
+    justify-content: center;
+    /* height: 25vh; */
+    max-height: 250px; 
+   
+   
+}
+
+.login_field{
+    /* background-color: blueviolet; */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    /* height: 50vh; */
+    font-size: 75%;
+    margin-top: 5%;
+    max-height: 300px;
+
+    
+}
+.SubmitButton{
+    width: 100%;
+    color: red;
+    
+    
+
+}
+
+#submit{
+    color: aliceblue;
+    background-color: black;
+    padding: 5%;
+    border: 2px solid white;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
