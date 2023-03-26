@@ -12,7 +12,8 @@ const loginSchema = new mongoose.Schema({
         password:{
             type:String,
             // required: true
-        }
+        },
+        userCart:[{product_id: String}]
 }
 
 )
