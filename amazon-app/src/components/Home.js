@@ -1,6 +1,7 @@
 import React , {useState,useEffect} from 'react'
 import './Home.css'
 import Product from './Product'
+import url from '../node_url'
 
 
 
@@ -10,7 +11,7 @@ const Home = () => {
   const [productArray , setArray] = useState([]);
 
     useEffect(() => {
-      fetch("http://127.0.0.1:4444/")
+      fetch(url)
       .then( (data ) => data.json())
       .then( (arr) => {
         console.log('render...')

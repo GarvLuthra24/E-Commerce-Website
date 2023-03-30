@@ -4,6 +4,7 @@ import './Product_cart2.css'
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { useNavigate } from 'react-router-dom';
+import url from '../node_url'
 
 
 
@@ -80,7 +81,7 @@ const Product = ({title , price , imageUrl , rating, id}) => {
                 const user = getToken().user_id;
 
                 if(user){
-                  fetch(`http://127.0.0.1:4444/cart/removeitem?user_id=${user}&product_id=${val}`)
+                  fetch(url + `/cart/removeitem?user_id=${user}&product_id=${val}`)
                 .then(() => {
                   console.log(ev.target.parentElement.parentElement)
                   const parent = ev.target.parentElement.parentElement.parentElement.parentElement

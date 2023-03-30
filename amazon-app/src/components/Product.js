@@ -4,6 +4,7 @@ import  './Product_cart.css'
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { useNavigate } from 'react-router-dom';
+import url from '../node_url'
 
 
 
@@ -92,7 +93,7 @@ const Product = ({title , price , imageUrl , rating, id}) => {
                 console.log(user);
          
                 if(user){
-                          fetch(`http://127.0.0.1:4444/addToCart?product_id=${stringVal}&user_id=${user.user_id}`)
+                          fetch(url+`/addToCart?product_id=${stringVal}&user_id=${user.user_id}`)
                           .then(data => data.json())
                           .then((neofetch) => {
                             console.log(neofetch)

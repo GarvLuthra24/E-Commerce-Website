@@ -3,6 +3,7 @@ import "./header.css"
 import { Outlet, Link } from "react-router-dom";
 import { useEffect, useState } from 'react';
 import signInOptions from'./loginSighin'
+import url from '../node_url'
 
 // import SearchIcon from '@mui/icons-material/Search'
 
@@ -43,7 +44,7 @@ const Header = () => {
         if(val != null){
             setUserName(val.name);
             setUserEmail(val.email);
-            fetch(`http://127.0.0.1:4444/cart/itemCount?user_id=${val.user_id}`)
+            fetch(url + `/cart/itemCount?user_id=${val.user_id}`)
             .then(data => data.json())
             .then(data => {
                 // console.log(data)

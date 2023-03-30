@@ -2,6 +2,7 @@ import React, {useState , useEffect} from 'react';
 import ProductCart from './Product_cart'
 import './Cart.css'
 import { useNavigate } from 'react-router-dom';
+import url from '../node_url'
 
 
 const Cart = () => {
@@ -26,7 +27,7 @@ const Cart = () => {
     useEffect( () => {
       const user = getToken()?.user_id
       if(user){
-        fetch(`http://127.0.0.1:4444/cart?user_id=${user}`)
+        fetch(url+`/cart?user_id=${user}`)
         .then(data => data.json())
         .then((data => {
             // console.log(data)

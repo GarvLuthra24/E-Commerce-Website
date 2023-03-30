@@ -3,6 +3,7 @@ import './Login.css'
 import {useState, useEffect} from 'react'
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
+import url from '../node_url'
 
 
 
@@ -23,7 +24,7 @@ const Login = () => {
 
         // alert(name + " " + password + " " + email)
 
-        await axios.post("http://127.0.0.1:4444/login/new-user", {
+        await axios.post(url + "/login/new-user", {
             name: name,
             email: email,
             password: password
