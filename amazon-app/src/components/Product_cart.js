@@ -3,6 +3,7 @@ import { useEffect , useState } from 'react';
 import './Product_cart2.css'
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import { useNavigate } from 'react-router-dom';
 
 
 
@@ -10,6 +11,21 @@ import 'react-toastify/dist/ReactToastify.css';
 const Product = ({title , price , imageUrl , rating, id}) => {
 
   const notify = () => toast("Product Removed From Cart !");
+  const navigate = useNavigate();
+
+
+  function setToken(userToken){
+    sessionStorage.setItem('token' , JSON.stringify(userToken))
+  }
+
+
+  
+  function getToken(){
+    const tokenString = sessionStorage.getItem('token');
+    const userToken = JSON.parse(tokenString)
+    // console.log(userToken)
+    return userToken;
+  }
 
   return (
     
@@ -61,7 +77,10 @@ const Product = ({title , price , imageUrl , rating, id}) => {
                 
                 console.log(val)
 
-                fetch(`http://127.0.0.1:4444/cart/removeitem?product_id=${val}`)
+                const user = getToken().user_id;
+
+                if(user){
+                  fetch(`http://127.0.0.1:4444/cart/removeitem?user_id=${user}&product_id=${val}`)
                 .then(() => {
                   console.log(ev.target.parentElement.parentElement)
                   const parent = ev.target.parentElement.parentElement.parentElement.parentElement
@@ -74,6 +93,12 @@ const Product = ({title , price , imageUrl , rating, id}) => {
                   notify()
                 })
                 .catch((err) => {console.log(err)})
+                }
+                else{
+                  navigate('/logon')
+                }
+
+                
                
 
                 

@@ -84,7 +84,7 @@
 .title{
 
     margin-left: 10px;
-    font-size:1vw;
+    font-size: 1.2em;
     height: 20vh;
 }
 
@@ -154,34 +154,19 @@
     /* border: 2px solid black; */
 }
 .addToCart{
-    background: #f1be3b;
-    border: 1px solid;
+    background: #ffffff;
+    /* border: 3px solid rgb(0, 0, 0); */
    margin: auto;
    /* margin-bottom: 5px; */
-    border-color: #a88734 #9c7e31 #846a29;
+   
     /* color: rgb(0, 0, 0); */
     width: 75%;
     /* align-self: center; */
-    border-radius: 12px;
+    border-radius: 10px;
     margin-top: 1vh;
-    font-size: 20px;
+    font-size: 1.2em;
     cursor: pointer; 
     transition: all ease 0.5s;
-    --c: #1095c1; /* the color  */
-    --h: 1.2em;   /* the height */
-    
-    line-height: var(--h);
-    background: 
-      linear-gradient(var(--c) 0 0) no-repeat 
-      calc(200% - var(--_p,0%)) 100%/200% var(--_p,.08em);
-    color: #0000;
-    overflow: hidden;
-    text-shadow: 
-      0 calc(-1*var(--_t,0em)) var(--c), 
-      0 calc(var(--h) - var(--_t,0em)) #fff;
-    transition: .3s var(--_s,0s), background-position .3s calc(.3s - var(--_s,0s));
-
-
     
 }
 

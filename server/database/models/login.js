@@ -13,7 +13,7 @@ const loginSchema = new mongoose.Schema({
             type:String,
             // required: true
         },
-        userCart:[{product_id: String}]
+        userCart:[String]
 }
 
 )

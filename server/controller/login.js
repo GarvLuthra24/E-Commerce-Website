@@ -36,7 +36,7 @@ module.exports.logInUser = async (req,res) => {
             res.json({signal: 0});
         }
         else{
-            res.json({signal: 1,name: existingUser.name , email: existingUser.email})
+            res.json({signal: 1,name: existingUser.name , email: existingUser.email, user_id: existingUser._id})
         } 
     })
 

@@ -1,21 +1,42 @@
 import React, {useState , useEffect} from 'react';
 import ProductCart from './Product_cart'
 import './Cart.css'
+import { useNavigate } from 'react-router-dom';
 
 
 const Cart = () => {
 
     const [productArray , setProductArray] = useState([]);
     const [isLoading, setLoading] = useState(true)
+    const navigate = useNavigate();
 
+
+    function setToken(userToken){
+      sessionStorage.setItem('token' , JSON.stringify(userToken))
+    }
+  
+  
+    
+    function getToken(){
+      const tokenString = sessionStorage.getItem('token');
+      const userToken = JSON.parse(tokenString)
+      // console.log(userToken)
+      return userToken;
+    }
     useEffect( () => {
-        fetch('http://127.0.0.1:4444/cart')
+      const user = getToken()?.user_id
+      if(user){
+        fetch(`http://127.0.0.1:4444/cart?user_id=${user}`)
         .then(data => data.json())
         .then((data => {
             // console.log(data)
             setProductArray(oldarr => ([...oldarr , ...data]))
             setLoading(false);
         }))
+      }
+      else{
+        navigate('/logon')
+      }
     }, []  )
 
     if(isLoading){

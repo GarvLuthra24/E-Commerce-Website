@@ -1,63 +1,49 @@
 // import Product from '../../database/models/product.js'
 const Product = require('../database/models/product')
 const Cart = require('../database/models/cart')
+const User = require('../database/models/login')
 
 module.exports.getProductList = async (req , res) => {
-    // const product = new Product({name:'silence'})
-    // await product.save();
-
     const allItems = await Product.find()
 
-    // console.log(allItems)
-    
-    // const product =  Product.find();
-    // console.log(product)
-
-    // const allItems = await Product.find({name:'garv'})
-    // console.log(allItems._conditions.name)
-    // const string = JSON.stringify(allItems._conditions)
-    // console.log(string)
     res.json(allItems)
-    // console.log(myJSON)
-
-    // res.send(stringItem.json())
-
-    // res.send(eval(stringItem))
-
 }
 
 
 module.exports.getAddToCart = async (req , res) => {
-    // console.log(req.query);
 
-    const newCart = await Cart.find({_id: req.query.product_id})
-    // console.log(newCart)
-    if(newCart.length == 0){
-        
-    let newCartItem = await new Cart({_id: req.query.product_id})
-        // console.log('adding product to the cart...')
-        // console.log(newCartItem);
-        await newCartItem.save()
-        
-        // console.log('product added successfully')
-        res.send('1')
+
+    await User.findOne({_id: req.query.user_id})
+    .then(userData => {
+        console.log(userData)
+        if(!userData.userCart.includes(req.query.product_id)){
+            userData.userCart.push(req.query.product_id)
+            let newCartItem = new User(userData);
+            
+            User.findOneAndDelete({_id: req.query.user_id})
+            newCartItem.save();
+            console.log('product added successfully')
+            res.send('1')
+        }
+        else{
+            res.send('0');
+        }
       
-    }
-    else{
+    })
+    .catch(err => {
+        console.log(err)
+        res.send('-1')
+    })
 
-        // console.log('Item already exists in Cart!!')
-       res.send('0')
-    }
-
-
+ 
 }
 
 module.exports.searchForCartItems = async( req, res) => {
     
- 
-    
-    const cartItems =  await Cart.find()
-    // console.log(cartItems)
+    const user = await User.findOne({_id: req.query.user_id})
+
+    const cartItems =  user.userCart
+    console.log(cartItems)
     
     let findProducts = [];
 
@@ -65,12 +51,13 @@ module.exports.searchForCartItems = async( req, res) => {
     // console.log('search begins for item')
 
     for(let i of cartItems){
-        let foundItem = await Product.find({_id: i._id})
+        let foundItem = await Product.find({_id: i})
         // console.log(foundItem)
         findProducts.push(foundItem);
     }
 
     res.json(findProducts)
+
 
 }
 
@@ -83,17 +70,38 @@ module.exports.getCartItems = async (req , res) => {
 
 
 module.exports.deleteCartItems = async (req,res) => {
-    // making a GET request here to delete the cart item
-    // console.log('removing the cart item......')
-    const productId = req.query.product_id;
-    // console.log(productId)
 
-    await Cart.deleteOne({_id : productId })
-    .then(() => {
-        // console.log('Item deleted Successfully')
-        res.send('1') 
+    await User.findOne({_id: req.query.user_id})
+    .then(userData => {
+        // console.log(userData)
+        console.log(userData)
+        if(userData.userCart.includes(req.query.product_id)){
+            console.log(userData.userCart)
+            const a =  userData.userCart.filter((i) => {
+                return i != req.query.product_id
+            })
+            // console.log(a)
+            userData.userCart = a;
+            // console.log(userData.userCart)
+            let newCartItem = new User(userData);
+            
+            User.findOneAndDelete({_id: req.query.user_id})
+            newCartItem.save();
+            console.log('product deleted successfully')
+            res.send('1')
+        }
+        else{
+            res.send('0');
+        }
+      
     })
-    .catch((err) => console.log(err))
+    .catch(err => {
+        console.log(err)
+        res.send('-1')
+    })
+
+
+
 
 
 
@@ -103,9 +111,14 @@ module.exports.deleteCartItems = async (req,res) => {
 }
 
 module.exports.getCartCount = async(req , res) => {
+    await User.findOne({_id: req.query.user_id})
+    .then(userData => {
+        res.send(`${userData.userCart.length}`)
+    })
+    .catch(err => {
+        console.log(err)
+        res.send('-1')
+    })
 
-    await Cart.countDocuments({ type: 'jungle' })
-    .then((val ) => res.send('' + val) )
-    .catch(err => console.log(err))
 }
 

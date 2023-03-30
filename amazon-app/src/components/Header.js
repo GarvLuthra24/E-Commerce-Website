@@ -43,18 +43,18 @@ const Header = () => {
         if(val != null){
             setUserName(val.name);
             setUserEmail(val.email);
-            console.log(val);
+            fetch(`http://127.0.0.1:4444/cart/itemCount?user_id=${val.user_id}`)
+            .then(data => data.json())
+            .then(data => {
+                // console.log(data)
+                // console.log("found "+ data + " items in cart")
+                changeCount(data)
+            })
         }
         
 
 
-        fetch('http://127.0.0.1:4444/cart/itemCount')
-        .then(data => data.json())
-        .then((data => {
-            // console.log(data)
-            // console.log("found "+ data + " items in cart")
-            changeCount(data)
-        }))
+       
     }, []  )
 
 
