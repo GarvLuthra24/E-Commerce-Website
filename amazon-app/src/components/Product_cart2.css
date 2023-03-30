@@ -14,7 +14,7 @@
     /* border-bottom: 0px; */
     position: relative;
     transition: all ease 0.5s;
-    color: #fff;
+    color: #000000;
     
 
 
@@ -25,14 +25,14 @@
     width: 100%;
     /* margin-bottom: 3vh; */
     border: 2px solid black;
-    background-color: rgb(0, 0, 0);
+    /* background-color: rgb(0, 0, 0); */
     display: flex;
     flex-direction: row;
     flex-wrap: nowrap;
     align-items: flex-start;
     border: 2px solid black;
     border-radius: 15px;
-    /* background-color: #7e16b9; */
+    background-color: rgb(255, 255, 255);
     /* background-color: #f3fffd; */
     justify-content: flex-start;
     max-width: 1500px;
@@ -184,6 +184,8 @@
     /* border: 2px solid black; */
 }
 .addToCart1{
+    padding: 7px;
+    padding-bottom: 5px;
     background: #A7171A;
     border: 1px solid;
    margin: auto;
@@ -195,7 +197,7 @@
     border-radius: 12px;
     margin-top: 1vh;
     margin-bottom: 2vh;
-    font-size: 1.2em;
+    font-size: 1em;
     cursor: pointer; 
 
     --c: #c11010; /* the color  */

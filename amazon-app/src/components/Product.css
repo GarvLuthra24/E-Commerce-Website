@@ -49,13 +49,13 @@
 
 .title{
     margin-left: 10px;
-    font-size: 10vw;
+    font-size: 1.5em;
 }
 
 
 .price{
     margin-left: 5px;
-    font-size: 2vh;
+    font-size: 1.2em;
     align-self: baseline;
 }
 
