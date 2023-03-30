@@ -2,7 +2,7 @@
     margin: auto;
     display: flex;
     flex-direction: column;
-    background-color: #f3fffd;
+    background-color: #ffffff;
     
     align-items: center;
     
@@ -27,7 +27,7 @@
     flex-direction: column;
     border: 2px solid black;
     border-radius: 15px;
-    background-color: #f3fffd;
+    background-color: #ffffff;
     
     
 }

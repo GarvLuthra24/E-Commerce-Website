@@ -7,6 +7,7 @@ import Login from './components/SignUp'
 import LoginSelector from './components/loginSighin'
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { ToastContainer, toast } from 'react-toastify';
+import Footer from './components/Footer';
 import 'react-toastify/dist/ReactToastify.css';
 // import Wave from 'react-wavify'
 
@@ -52,6 +53,7 @@ function App() {
         </Route>
         </Routes>
       </BrowserRouter>
+      <Footer/>
       <ToastContainer
       position="bottom-right"
       autoClose={3000}
@@ -62,7 +64,7 @@ function App() {
       pauseOnFocusLoss
       draggable
       pauseOnHover
-      theme="light" />
+      theme="dark" />
 
 
     </div>
