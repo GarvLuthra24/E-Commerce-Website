@@ -4,10 +4,10 @@ const Cart = require('../database/models/cart')
 const User = require('../database/models/login')
 
 module.exports.getProductList = async (req , res) => {
-    // const allItems = await Product.find()
+    const allItems = await Product.find()
 
-    // res.json(allItems)
-    res.send('1')
+    res.json(allItems)
+    // res.send('1 ')
 }
 
 
