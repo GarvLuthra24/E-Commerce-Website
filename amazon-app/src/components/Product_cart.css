@@ -186,3 +186,9 @@
     --_p: 100%;
     --_s: .3s
 } */
+
+@media only screen and (max-width: 600px) {
+    .Product_main{
+        width: 95%;
+    }
+  }
