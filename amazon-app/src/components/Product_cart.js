@@ -33,13 +33,13 @@ const Product = ({title , price , imageUrl , rating, id}) => {
    
 
 
-    <div className='page1 '>
+    <div className='page1  px-1'>
     <div className='Product_main1'>
     <div className='Product1 flex flex-row flex-wrap justify-start items-start'>
-    <div className='image1 w-3/5  max-w-md px-5 py-2 mx-10 '>
+    <div className='image1 w-2/5  max-w-md px-5 py-2 mx-10 '>
  
 {/* https://images-na.ssl-images-amazon.com/images/I/51Zymoq7UnL._SX325_BO1,204,203,200_.jpg */}
-          <img className='product_image1 max-h-96 min-w-full w-full h-96'src={imageUrl} alt='product image'></img>
+          <img className='product_image1  max-h-96 min-w-full w-full h-96'src={imageUrl} alt='product image'></img>
 
         </div>
         <div className='product_info1 px-25 w-2/5  m-5'>
@@ -57,7 +57,7 @@ const Product = ({title , price , imageUrl , rating, id}) => {
                 </strong>
           </p>
 
-          <p className='rating1 text-base'>
+          <p className='rating1 text-base mb-4'>
 
             {Array(rating)
             .fill()
@@ -69,7 +69,7 @@ const Product = ({title , price , imageUrl , rating, id}) => {
           </br>
           <br></br>
           <br></br> */}
-          <button className='addToCart1 text-sm w-1/4 min-w-max max-w-xs px-5' 
+          <button className='addToCart1 text-sm w-1/4 min-w-max max-w-xs px-5 ' 
               onClick={ (ev) => {
                 // console.log(ev)
                 const target = (ev.target.parentElement.parentElement.parentElement)

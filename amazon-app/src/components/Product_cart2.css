@@ -1,3 +1,5 @@
+
+
 .Product1{
     margin: auto;
     /* display: flex;
@@ -11,7 +13,7 @@
     z-index: 1;
     
     /* max-height: fit-content; */
-    width: 90%;
+    /* width: 90%; */
     /* border-bottom: 0px; */
     position: relative;
     transition: all ease 0.5s;
@@ -226,7 +228,7 @@
     --_s: .3s
 }
 
-@media only screen and (max-width: 1050px) {
+@media only screen and (max-width: 700px) {
  .product_info1{
     width: 100%;
  }

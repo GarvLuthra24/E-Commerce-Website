@@ -48,13 +48,14 @@ const Login = () => {
         
     <div className='Login'>
         <div className='login_field'>
-        <div className='login_container'>
+        <div className='login_container '>
             <h1>Sign Up!</h1>
             <br></br>
             <form onSubmit={handleSubmit} method={'post'} >
             <label>
                     <h2>Name</h2>
                     <input type={'text'} id={"name"}
+                    className='shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline'
                     onChange={(e) => {setName(e.target.value)}}
                     ></input>
                 </label>
@@ -66,6 +67,7 @@ const Login = () => {
                 <label>
                     <h2>Email</h2>
                     <input type={'text'} id={"email"}
+                    className='shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline'
                     onChange={(e) => {setEmail(e.target.value)}}></input>
                 </label>
          
@@ -74,12 +76,13 @@ const Login = () => {
                 <label>
                     <h2>Password</h2>
                     <input type={'password'} id={"password"}
+                    className='shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline'
                     onChange={(e) => {setPassword(e.target.value)}}></input>
                 </label>
                 <br></br>
                 <br></br>
                 <div className='SubmitButton'>
-                      <input type={"submit"} id={'submit'}></input>
+                      <button type={"submit"} id={'submit'}> Create Account</button>
                 </div>
                
             </form>

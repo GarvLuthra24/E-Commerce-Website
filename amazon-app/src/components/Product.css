@@ -1,5 +1,5 @@
 .Product{
-    margin: auto;
+ 
     display: flex;
     flex-direction: column;
     background-color: #ffffff;
@@ -9,18 +9,16 @@
     z-index: 1;
     
     /* max-height: fit-content; */
-    width: 100%;
+    width: 95%;
     /* border-bottom: 0px; */
     
-    margin-left: auto;
-    margin-right: auto;
 
 
     
 }
 .Product_main{
-    width: 30%;
-    margin-bottom: 3vh;
+    /* width: 30%; */
+    /* margin-bottom: 3vh; */
     border: 2px solid black;
     /* background-color: antiquewhite; */
     display: flex;

@@ -26,11 +26,11 @@ const LoginSighin = () => {
         
         
         <div className='tabs'>
-            <button className='btnstyle' onClick={(e)=>{
+            <button className='btnstyle shadow appearance-none border rounded leading-tight' onClick={(e)=>{
              setCount(0);
              
             }}>LOG IN</button>
-            <button className='btnstyle'onClick={(e)=>{
+            <button className='btnstyle shadow appearance-none border rounded leading-tight'onClick={(e)=>{
               setCount(1);
             }}>SIGN UP</button>
         </div>

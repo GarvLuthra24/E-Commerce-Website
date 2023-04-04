@@ -36,7 +36,7 @@ const Product = ({title , price , imageUrl , rating, id}) => {
 
 
     
-    <div className='Product_main'>
+    <div className='Product_main mx-1'>
     <div className='Product'>
     <div className='image'>
 
