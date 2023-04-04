@@ -5,8 +5,7 @@ import { useEffect, useState } from 'react';
 import signInOptions from'./loginSighin'
 import url from '../node_url'
 
-// import SearchIcon from '@mui/icons-material/Search'
-
+import { UilSearch } from '@iconscout/react-unicons'
 
 
 // import AccessAlarmIcon from '@mui/icons-material/AccessAlarm';
@@ -67,10 +66,16 @@ const Header = () => {
     </Link>
 
 
-    <div className='header_search ml-5 w-2/4 flex flex-row max-w-5xl  items-baseline  bg-white rounded-sm'>
-        <input type='text' className='header_searchInput w-9/12 max-h-5 '/>
+    <div className='header_search ml-5 w-2/4 flex  flex-row max-w-5xl justify-center items-center text-black bg-[#131921]'>
+        <input type='text' className='header_searchInput w-11/12 h-8 rounded-sm'/>
         {/* <SearchIcon className='header_searchIcon'/> */}
-        <button type='submit' className='searchButton w-3/12 text-xs max-w-xs rounded-sm  bg-[#ffd288] py-1 text-black'>Search</button>
+
+<button type='submit' className='searchButton    text-xs rounded-sm max-h-9 block p-1 bg-[#ffd288]  text-black'>
+  <UilSearch/>
+</button>
+
+
+
          
     </div>
 

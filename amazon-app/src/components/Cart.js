@@ -47,8 +47,10 @@ const Cart = () => {
   return (
     <div className='CartPage'>
 
-      <div className='pacTitle'>
-      <div className='cartHead'>CART</div>
+      <div className='cartHead text-9xl w-full flex flex-row justify-center text-white font bg-gradient-to-tl from-[#269784] to-[#0b1524] '>CART</div>
+
+      {/* <div className='pacTitle'>
+      
       
 
       <div class="pacman">
@@ -58,7 +60,7 @@ const Cart = () => {
       <div class="feed"></div>
       </div>
       
-      </div>
+      </div> */}
 
 
 
