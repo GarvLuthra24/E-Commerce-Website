@@ -60,7 +60,7 @@ const Header = () => {
 
 
   return (
-    <div className="Header flex flex-row flex-wrap justify-around  items-center bg-[#131921] text-sm text-white ">
+    <div className="Header flex flex-row flex-wrap justify-around  items-center bg-[#131921] text-sm text-white  sticky top-0 z-50">
     {/* Header */}
     <Link to='/'>
     <img className='header_logo   max-h-7 px-5 pt-1  m  ' src='http://pngimg.com/uploads/amazon/amazon_PNG11.png'></img>
