@@ -60,17 +60,17 @@ const Header = () => {
 
 
   return (
-    <div className="Header flex flex-row flex-wrap justify-around  items-center bg-blue-900 text-sm text-white ">
+    <div className="Header flex flex-row flex-wrap justify-around  items-center bg-[#131921] text-sm text-white ">
     {/* Header */}
     <Link to='/'>
-    <img className='header_logo   max-h-7 px-5 pt-1 bg-black  ' src='http://pngimg.com/uploads/amazon/amazon_PNG11.png'></img>
+    <img className='header_logo   max-h-7 px-5 pt-1  m  ' src='http://pngimg.com/uploads/amazon/amazon_PNG11.png'></img>
     </Link>
 
 
-    <div className='header_search ml-5 w-2/4 bg-red-800'>
-        <input type='text' className='header_searchInput w-4/6 '/>
+    <div className='header_search ml-5 w-2/4 flex flex-row max-w-5xl  items-baseline  bg-white rounded-sm'>
+        <input type='text' className='header_searchInput w-9/12 max-h-5 '/>
         {/* <SearchIcon className='header_searchIcon'/> */}
-        <button type='submit' className='searchButton w-2/6 tet-xs  bg-orange-700'>Search</button>
+        <button type='submit' className='searchButton w-3/12 text-xs max-w-xs rounded-sm  bg-[#ffd288] py-1 text-black'>Search</button>
          
     </div>
 
@@ -78,20 +78,20 @@ const Header = () => {
     {/* <SearchIcon/> */}
 
 
-    <div className='headerNav flex flex-row ml-2 bg-fuchsia-900 my-1  justify-around px-3'>
+    <div className='headerNav flex flex-row ml-2 my-1  justify-around px-3'>
     <div className='header_option'>
-        <Link to="/logon"  className='hyperLink userName mr-2'>
+        <Link to="/logon"  className='hyperLink userName mr-3'>
         
           Hey, {userName}
         
         </Link>
         </div>
       
-        <div className='header_option mr-2'>
+        <div className='header_option mr-3'>
             Orders
         </div>
 
-        <div className='header_option mr-2'>
+        <div className='header_option mr-3'>
             Prime
         </div>
         {/* <Link to='/cart'> */}
