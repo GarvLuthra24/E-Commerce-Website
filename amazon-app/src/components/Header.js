@@ -1,5 +1,5 @@
 import React from 'react'
-import "./header.css"
+// import "./header.css"
 import { Outlet, Link } from "react-router-dom";
 import { useEffect, useState } from 'react';
 import signInOptions from'./loginSighin'
@@ -60,17 +60,17 @@ const Header = () => {
 
 
   return (
-    <div className="Header">
+    <div className="Header flex flex-row flex-wrap justify-around  items-center bg-blue-900 text-sm text-white ">
     {/* Header */}
     <Link to='/'>
-    <img className='header_logo' src='http://pngimg.com/uploads/amazon/amazon_PNG11.png   '></img>
+    <img className='header_logo   max-h-7 px-5 pt-1 bg-black  ' src='http://pngimg.com/uploads/amazon/amazon_PNG11.png'></img>
     </Link>
 
 
-    <div className='header_search'>
-        <input type='text' className='header_searchInput'/>
+    <div className='header_search ml-5 w-2/4 bg-red-800'>
+        <input type='text' className='header_searchInput w-4/6 '/>
         {/* <SearchIcon className='header_searchIcon'/> */}
-        <button type='submit' className='searchButton'>Search</button>
+        <button type='submit' className='searchButton w-2/6 tet-xs  bg-orange-700'>Search</button>
          
     </div>
 
@@ -78,24 +78,24 @@ const Header = () => {
     {/* <SearchIcon/> */}
 
 
-    <div className='headerNav'>
+    <div className='headerNav flex flex-row ml-2 bg-fuchsia-900 my-1  justify-around px-3'>
     <div className='header_option'>
-        <Link to="/logon"  className='hyperLink userName'>
+        <Link to="/logon"  className='hyperLink userName mr-2'>
         
           Hey, {userName}
         
         </Link>
         </div>
       
-        <div className='header_option'>
+        <div className='header_option mr-2'>
             Orders
         </div>
 
-        <div className='header_option'>
+        <div className='header_option mr-2'>
             Prime
         </div>
         {/* <Link to='/cart'> */}
-        <div className='header_option'>
+        <div className='header_option text-center'>
             <Link to="/cart" className='hyperLink'>
             Cart
             <div className='cartItemCount'>{cartCount}</div>
