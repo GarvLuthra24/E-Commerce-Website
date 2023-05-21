@@ -13,10 +13,11 @@ module.exports.getProductList = async (req , res) => {
 
 module.exports.getAddToCart = async (req , res) => {
 
-
-    await User.findOne({_id: req.query.user_id})
+    console.log('adding to cart.....')
+    console.log(req.user_id)
+    await User.findOne({_id: req.user_id})
     .then(userData => {
-        console.log(userData)
+        
         if(!userData.userCart.includes(req.query.product_id)){
             userData.userCart.push(req.query.product_id)
             let newCartItem = new User(userData);
@@ -41,8 +42,9 @@ module.exports.getAddToCart = async (req , res) => {
 
 module.exports.searchForCartItems = async( req, res) => {
     
-    const user = await User.findOne({_id: req.query.user_id})
+    const user = await User.findOne({_id: req.user_id})
 
+    
     const cartItems =  user.userCart
     console.log(cartItems)
     
@@ -72,7 +74,7 @@ module.exports.getCartItems = async (req , res) => {
 
 module.exports.deleteCartItems = async (req,res) => {
 
-    await User.findOne({_id: req.query.user_id})
+    await User.findOne({_id: req.user_id})
     .then(userData => {
         // console.log(userData)
         console.log(userData)

@@ -93,7 +93,7 @@ const Product = ({title , price , imageUrl , rating, id}) => {
                 console.log(user);
          
                 if(user){
-                          fetch(url+`/addToCart?product_id=${stringVal}&user_id=${user.user_id}`)
+                          fetch(url+`/addToCart?product_id=${stringVal}&token=${user.token}`)
                           .then(data => data.json())
                           .then((neofetch) => {
                             console.log(neofetch)

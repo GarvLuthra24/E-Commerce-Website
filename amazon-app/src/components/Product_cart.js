@@ -81,7 +81,7 @@ const Product = ({title , price , imageUrl , rating, id}) => {
                 const user = getToken().user_id;
 
                 if(user){
-                  fetch(url + `/cart/removeitem?user_id=${user}&product_id=${val}`)
+                  fetch(url + `/cart/removeitem?product_id=${val}&token=${getToken().token}`)
                 .then(() => {
                   console.log(ev.target.parentElement.parentElement)
                   const parent = ev.target.parentElement.parentElement.parentElement.parentElement
