@@ -56,14 +56,17 @@ module.exports.logInUser = async (req,res) => {
     // })
 
     let val = req.body;
+    console.log(val);
 
     const email = val.email;
     const password = val.password
 
     try{
         const existingUser = await login.findOne({email: email});
-        if(!existingUser){
+        console.log(existingUser)
+        if(existingUser == null){
             res.json({signal: 0});
+            return;
         }
         
         const matchPassword = await bcrypt.compare(password , existingUser.password);

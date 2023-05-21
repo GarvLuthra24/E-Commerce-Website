@@ -26,8 +26,8 @@ const Cart = () => {
     }
     useEffect( () => {
       const user = getToken()?.user_id
-      console.log(user)
-      console.log(getToken().token)
+      // console.log(user)
+      // console.log(getToken().token)
       if(user){
         fetch(url+`/cart?token=${getToken().token}`)
         .then(data => data.json())
@@ -36,6 +36,9 @@ const Cart = () => {
             setProductArray(oldarr => ([...oldarr , ...data]))
             setLoading(false);
         }))
+        .catch((err) => {
+          navigate('/logon')
+        })
       }
       else{
         navigate('/logon')
