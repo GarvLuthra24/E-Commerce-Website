@@ -191,4 +191,7 @@
     .Product_main{
         width: 95%;
     }
+    .image{
+        max-height: 300px;
+    }
   }
