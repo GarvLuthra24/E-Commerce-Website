@@ -34,15 +34,18 @@ const Product = ({title , price , imageUrl , rating, id}) => {
 
 
     <div className='page1  px-1'>
-    <div className='Product_main1'>
-    <div className='Product1 flex flex-row flex-wrap justify-start items-start'>
-    <div className='image1 w-2/5  max-w-md px-5 py-2 mx-10 '>
+    <div className='Product_main1 '>
+
+    
+
+    <div className='Product1   flex flex-row min-w-full flex-wrap justify-start items-start '>
+    <div className='image1 w-2/5  max-w-md px-5 py-2 mx-10  '>
  
 {/* https://images-na.ssl-images-amazon.com/images/I/51Zymoq7UnL._SX325_BO1,204,203,200_.jpg */}
-          <img className='product_image1  max-h-96 min-w-full w-full h-96'src={imageUrl} alt='product image'></img>
+          <img className='product_image1  max-w-xs w-44'src={imageUrl} alt='product image'></img>
 
         </div>
-        <div className='product_info1 px-25 w-2/5  m-5'>
+        <div className='product_info1 px-25 w-2/5  m-5 '>
 
           <p className='title1 text-2xl pb-8 bg-red mb-5'>
             {title}

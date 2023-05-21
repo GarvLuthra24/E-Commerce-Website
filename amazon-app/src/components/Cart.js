@@ -54,23 +54,15 @@ const Cart = () => {
 
       <div className='cartHead text-9xl w-full flex flex-row justify-center text-white font bg-gradient-to-tl from-[#269784] to-[#0b1524] '>CART</div>
 
-      {/* <div className='pacTitle'>
-      
-      
-
-      <div class="pacman">
-        
-      <div class="pacman-top"></div>
-      <div class="pacman-bottom"></div>
-      <div class="feed"></div>
-      </div>
-      
-      </div> */}
 
 
 
 
-<div className='home_row'>
+
+
+<div className=' flex flex-row flex-wrap-reverse'>
+
+<div className='home_row w-8/12 '>
           {
           productArray.map(product => 
           (
@@ -86,7 +78,50 @@ const Cart = () => {
 
           ))}
           </div>
-          </div>
+
+  <div className='checkout mx-auto align-top max-w-fit border-1 border-solid w-1/4 '> 
+
+    <form className='  min-w-fit max-w-xs m-auto p-5 '>
+    <div className=' text-xl m-auto flex flex-row justify-center pt-2 pb-4'>Checkout</div>
+      <ul>
+            <li className=' py-2'>
+              <label for="addField1">Flat, House No.</label>
+              <br></br>
+              <input type="address" id="addField1"></input>
+            </li>
+      
+          <li className=' py-2'>
+            <label for="addField2">Area, Locality, Sector, Village</label>
+            <br></br>
+            <input type="address" id="addField2"></input>
+          </li>
+
+          <li className=' py-2'>
+            <label for="addField3">Locality</label>
+            <br></br>
+            <input type="address" id="addField3"></input>
+          </li>
+
+          <li className=' py-2'>
+            <label for="addField4">Pincode</label>
+            <br></br>
+            <input type="address" id="addField4"></input>
+          </li>
+          <li className=' flex flex-row justify-center'>
+            <button type='Submit' className=' bg-[#ffd814] min-w-max p-2 w-28 my-2 rounded-md'>Submit</button>
+          </li>
+
+      </ul>
+            
+
+    </form>
+
+
+  </div>
+  </div>
+  </div>
+  
+
   )
   
 }

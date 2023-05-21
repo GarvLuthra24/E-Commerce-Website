@@ -10,6 +10,8 @@
    
 }
 
+
+
 .pacTitle{
     display: flex;
     align-items: center;
@@ -144,4 +146,15 @@ animation: eat 1s linear 0s infinite;
       700px 65px 0 0 white, 
       900px 65px 0 0 white, 
       1100px 65px 0 0 white;}
+}
+
+@media screen and (max-width: 900px) {
+  .home_row{
+    width: 100%;
+  }
+  .checkout{
+    width: 100%;
+  }
+
+  
 }
